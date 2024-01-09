@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   body {
     color: #b0b0b0;
     background-color: #101010;
@@ -15,7 +15,7 @@
   }
 }
 
-@media not (prefers-color-scheme: dark) {
+@media not (prefers-color-scheme: light) {
   .button-grid button:hover {
     background-color: #ffffff;
   }

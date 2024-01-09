@@ -5,7 +5,9 @@
   "description": "Curly punctuation for typography fans.",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "input",
+    "clipboardWrite"
   ],
   "background": {
     "service_worker": "background.js"
