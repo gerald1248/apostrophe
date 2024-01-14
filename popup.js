@@ -1,3 +1,23 @@
+function copyToClipboard(symbol) {
+  var notification = document.getElementById('notification');
+  var success = false;
+  navigator.clipboard.writeText(symbol).then(() => {
+    notification.innerHTML = "Copied";
+    success = true;
+  }).catch(error => {
+    notification.innerHTML = `Error copying text: ${error}`
+  });;
+  notification.classList.remove('hidden');
+  notification.classList.add('visible');
+  setTimeout(function() {
+    notification.classList.remove('visible');
+    notification.classList.add('hidden');
+    if (success) {
+      window.close(); 
+    }
+  }, 750);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   var singleQuoteLeftButton = document.getElementById('singleQuoteLeftButton');
   var singleQuoteRightButton = document.getElementById('singleQuoteRightButton');
@@ -9,39 +29,35 @@ document.addEventListener('DOMContentLoaded', function() {
   singleQuoteRightButton.focus();
 
   singleQuoteLeftButton.addEventListener('click', function() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: 'singleQuoteLeft' });
-    });
+    copyToClipboard('\u2018'); // ‘
   });
 
   singleQuoteRightButton.addEventListener('click', function() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: 'singleQuoteRight' });
-    });
+    copyToClipboard('\u2019'); // ’
   });
 
   doubleQuoteLeftButton.addEventListener('click', function() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: 'doubleQuoteLeft' });
-    });
+    copyToClipboard('\u201c'); // “
   });
 
   doubleQuoteRightButton.addEventListener('click', function() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: 'doubleQuoteRight' });
-    });
+    copyToClipboard('\u201d'); // ”
+  });
+
+  guillemotLeftButton.addEventListener('click', function() {
+    copyToClipboard('\u00ab'); // «
+  });
+
+  guillemotRightButton.addEventListener('click', function() {
+    copyToClipboard('\u00bb'); // »
   });
 
   ndashButton.addEventListener('click', function() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: 'ndash' });
-    });
+    copyToClipboard('\u2013'); // –
   });
 
   mdashButton.addEventListener('click', function() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: 'mdash' });
-    });
+    copyToClipboard('\u2014'); // —
   });
 
 });

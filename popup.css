@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   body {
     color: #b0b0b0;
     background-color: #101010;
@@ -15,7 +15,7 @@
   }
 }
 
-@media not (prefers-color-scheme: light) {
+@media not (prefers-color-scheme: dark) {
   .button-grid button:hover {
     background-color: #ffffff;
   }
@@ -36,7 +36,7 @@ button {
 .button-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
   margin: 10px auto;
 }
 
@@ -52,4 +52,12 @@ button {
 
 p {
   text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }

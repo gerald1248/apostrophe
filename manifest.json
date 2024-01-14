@@ -1,12 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Apostrophe",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Curly punctuation for typography fans.",
   "permissions": [
-    "activeTab",
-    "scripting",
-    "input",
     "clipboardWrite"
   ],
   "background": {
@@ -21,10 +18,5 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "content_scripts": [
-    {
-      "matches": ["https://*/*", "http://*/*"],
-      "js": ["content.js"]
-    }
-  ]
+  "content_scripts": []
 }
