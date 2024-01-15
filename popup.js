@@ -5,7 +5,7 @@ function copyToClipboard(symbol) {
     notification.innerHTML = "Copied";
     success = true;
   }).catch(error => {
-    notification.innerHTML = `Error copying text: ${error}`
+    notification.innerHTML = `Error copying text: ${error}`;
   });;
   notification.classList.remove('hidden');
   notification.classList.add('visible');
@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
     copyToClipboard('\u201d'); // ”
   });
 
-  guillemotLeftButton.addEventListener('click', function() {
+  guillemetLeftButton.addEventListener('click', function() {
     copyToClipboard('\u00ab'); // «
   });
 
-  guillemotRightButton.addEventListener('click', function() {
+  guillemetRightButton.addEventListener('click', function() {
     copyToClipboard('\u00bb'); // »
   });
 
