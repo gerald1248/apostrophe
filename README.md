@@ -1,4 +1,6 @@
 # apostrophe
 Chrome extension for curly punctuation.
 
-See https://github.com/gerald1248/apostrophe for the source.
+[Light mode](images/apostrophe-screenshot-light.png)
+
+[Dark mode](images/apostrophe-screenshot-dark.png)
